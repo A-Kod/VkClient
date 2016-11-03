@@ -6,7 +6,7 @@ class Client
 {
 private:
     std:: string a_token;
-//    static auto write_callback(char *data, size_t size, size_t nmemb, std::string &buff) -> size_t;
+//  static auto write_callback(char *data, size_t size, size_t nmemb, std::string &buff) -> size_t;
 public:
     Client (std::string token);
 
