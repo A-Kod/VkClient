@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 #include <curl/curl.h>
-#include "../sourceы/client.cpp"
+#include "../sources/client.cpp"
 
 int main()
 {
