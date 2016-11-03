@@ -5,7 +5,7 @@
 
 int main()
 {
-    Client client ("6a690f374224523aea1efc7b270873d4a963e8e615ba59c15f05e37b6cef426ea93f2a49005146d598a08"); //старый "просроченный" токен
+    Client client ("6a690f374224523aea1efc7b270873d4a963e8e615ba59c15f05e37b6cef426ea93f2a49005146d598a08"); //старый "просроченный" access_token
     if (client.check_connection())
     {
         std::cout<<std::endl<<"Удалось подключиться"<<std::endl;
