@@ -89,7 +89,7 @@ int main()
         std::cout<<std::endl<<"Удалось подключиться"<<std::endl;
     }
     else
-        std::cout<<std::endl<<" Not Удалось подключиться"<<std::endl;
+        std::cout<<std::endl<<" Не удалось подключиться"<<std::endl;
     std::cout<<"Список друзей онлайн:"<<std::endl;
     client.friend_list();
     return 0;
