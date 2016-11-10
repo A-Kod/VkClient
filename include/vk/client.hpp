@@ -1,8 +1,3 @@
-
-//
-// Created by Kodyk Valentina on 10.11.16.
-//
-
 #ifndef VKONT_CLIENT_H
 #define VKONT_CLIENT_H
 #include <string>
