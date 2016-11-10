@@ -21,7 +21,7 @@ SCENARIO("client must check connection using a token") {
 
         WHEN("initialize client")
         {
-            Client client("265be38a0481daeee53ed10adb2807c42d7b6f76bc12907ae90306028f1fdec953ada593093fd1ab03d30");
+            Client client("1263992559220886cd14d1a9f1d508a3ce09599d6d0145ea50e7e379bdb466748c81aced72031cb153c3d");
 
             THEN("check_connection() must return true")
             {
