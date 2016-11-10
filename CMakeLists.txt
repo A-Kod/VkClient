@@ -29,10 +29,13 @@ add_executable(Examples ${CMAKE_CURRENT_SOURCE_DIR}/examples/main.cpp)
 
 target_link_libraries(Examples ${PROJECT_NAME} ${DEPENDS_LIBRARIES})
 
-if(BUILD_TESTS)
-	enable_testing()
-	file(GLOB ${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)
-	add_executable(check ${${PROJECT_NAME}_TEST_SOURCES})
-	target_link_libraries(check ${PROJECT_NAME} ${DEPENDS_LIBRARIES})
-	add_test(NAME check COMMAND check "-s" "-r" "compact" "--use-colour" "yes")
-endif()
+
+add_executable(Tests ${TESTS_SOURCE} tests/catch.hpp tests/check.cpp tests/main.cpp)
+
+#if(BUILD_TESTS)
+#	enable_testing()
+#	file(GLOB ${PROJECT_NAME}_TEST_SOURCES tests/*.cpp)
+#	add_executable(check ${${PROJECT_NAME}_TEST_SOURCES})
+#	target_link_libraries(check ${PROJECT_NAME} ${DEPENDS_LIBRARIES})
+#	add_test(NAME check COMMAND check "-s" "-r" "compact" "--use-colour" "yes")
+#endif()
