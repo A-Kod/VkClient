@@ -13,11 +13,11 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
 add_library(${PROJECT_NAME} STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/client.cpp)
 
-find_package(Boost COMPONENTS regex REQUIRED)
+#find_package(Boost COMPONENTS regex REQUIRED)
 find_package(OpenSSL REQUIRED)
 find_package(CURL REQUIRED)
 include_directories(${CURL_INCLUDE_DIR})
-include_directories(${Boost_INCLUDE_DIRS})
+#include_directories(${Boost_INCLUDE_DIRS})
 
 if(UNIX)
 	set(DEPENDS_LIBRARIES ${OPENSSL_LIBRARIES} ${CURL_LIBRARY} ${Boost_LIBRARIES})
