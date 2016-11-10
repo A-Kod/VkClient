@@ -1,5 +1,5 @@
 //
-// Created by Kodyk Valentina on 10.11.16.
+// Created by Kodyk Valentina on 10.11.16.nn
 //
 
 #ifndef VKONT_JSON_H
