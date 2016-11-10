@@ -5,7 +5,7 @@
 #include <curl/curl.h>
 #include <map>
 //#include <boost/>
-#include "json.hpp"
+#include "vk/json.hpp"
 
 //https://oauth.vk.com/blank.html#access_token=bbd505d23f9b60948f818637df858c8783df43e213eca9b8a76bbdde830193c821f3f08b8fc59c4525e3d&expires_in=86400&user_id=123373332
 //https://oauth.vk.com/blank.html#access_token=6a690f374224523aea1efc7b270873d4a963e8e615ba59c15f05e37b6cef426ea93f2a49005146d598a08&expires_in=86400&user_id=123373332
