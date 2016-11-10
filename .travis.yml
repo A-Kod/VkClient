@@ -30,4 +30,4 @@ script:
   - mkdir build
   - cd build
   - cmake .. && make
-  - ./Tests -s -r compact
+  - ctest
