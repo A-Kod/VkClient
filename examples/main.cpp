@@ -3,12 +3,12 @@
 #include <curl/curl.h>
 #include <map>
 //#include <boost/>
-#include "json.hpp"
+#include "vk/json.hpp"
 
 //https://oauth.vk.com/blank.html#access_token=bbd505d23f9b60948f818637df858c8783df43e213eca9b8a76bbdde830193c821f3f08b8fc59c4525e3d&expires_in=86400&user_id=123373332
 //https://oauth.vk.com/blank.html#access_token=6a690f374224523aea1efc7b270873d4a963e8e615ba59c15f05e37b6cef426ea93f2a49005146d598a08&expires_in=86400&user_id=123373332
 //https://oauth.vk.com/blank.html#access_token=265be38a0481daeee53ed10adb2807c42d7b6f76bc12907ae90306028f1fdec953ada593093fd1ab03d30&expires_in=86400&user_id=123373332
-
+//https://oauth.vk.com/blank.html#access_token=1263992559220886cd14d1a9f1d508a3ce09599d6d0145ea50e7e379bdb466748c81aced72031cb153c3d&expires_in=86400&user_id=123373332
 
 using json = nlohmann::json;
 
@@ -163,7 +163,7 @@ auto Client::friend_list() -> void
 
 int main()
 {
-    Client client ("bbd505d23f9b60948f818637df858c8783df43e213eca9b8a76bbdde830193c821f3f08b8fc59c4525e3d"); //старый "просроченный" токен
+    Client client ("1263992559220886cd14d1a9f1d508a3ce09599d6d0145ea50e7e379bdb466748c81aced72031cb153c3d"); //старый "просроченный" токен
     if (client.check_connection())
     {
         std::cout<<std::endl<<"Удалось подключиться"<<std::endl;
