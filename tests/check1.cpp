@@ -1,3 +1,8 @@
+#include "vk/client.hpp"
+#include "catch.hpp"
+
+
+
 SCENARIO("client must check connection using a token") {
     GIVEN("a valid token")
     {
