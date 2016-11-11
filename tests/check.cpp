@@ -13,9 +13,10 @@ SCENARIO("client must check connection using a token") {
             }
         }
     }
+}
 
 
-
+SCENARIO("client must check connection using a token") {
     GIVEN("a valid token")
     {
 
