@@ -163,7 +163,7 @@ auto Client::friend_list() -> void
 
 int main()
 {
-    Client client ("1263992559220886cd14d1a9f1d508a3ce09599d6d0145ea50e7e379bdb466748c81aced72031cb153c3d"); //старый "просроченный" токен
+    Client client (""); //старый "просроченный" токен
     if (client.check_connection())
     {
         std::cout<<std::endl<<"Удалось подключиться"<<std::endl;
