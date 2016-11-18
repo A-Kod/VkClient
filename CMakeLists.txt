@@ -14,24 +14,19 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
 add_library(${PROJECT_NAME} STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/client.cpp)
 
-#find_package(Boost COMPONENTS regex REQUIRED)
 find_package(OpenSSL REQUIRED)
 find_package(CURL REQUIRED)
 include_directories(${CURL_INCLUDE_DIR})
-#include_directories(${Boost_INCLUDE_DIRS})
 
 if(UNIX)
-	set(DEPENDS_LIBRARIES ${OPENSSL_LIBRARIES} ${CURL_LIBRARY} ${Boost_LIBRARIES})
+	set(DEPENDS_LIBRARIES ${OPENSSL_LIBRARIES} ${CURL_LIBRARY})
 elseif(MSVC)
-	set(DEPENDS_LIBRARIES ${OPENSSL_LIBRARIES} ${CURL_LIBRARY} ${Boost_LIBRARIES} ws2_32)
+	set(DEPENDS_LIBRARIES ${OPENSSL_LIBRARIES} ${CURL_LIBRARY} ws2_32)
 endif()
 
 add_executable(Examples ${CMAKE_CURRENT_SOURCE_DIR}/examples/main.cpp)
 
 target_link_libraries(Examples ${PROJECT_NAME} ${DEPENDS_LIBRARIES})
-
-
-#add_executable(Tests ${TESTS_SOURCE} tests/catch.hpp tests/check.cpp tests/main.cpp)
 
 if(BUILD_TESTS)
 	enable_testing()
