@@ -65,7 +65,7 @@ auto Client::check_connection() -> bool
             }
             catch (const std::exception & ex)
             {
-                std::cout << ex.what() << std::endl;
+                std::cerr << ex.what() << std::endl;
             }
         }
         else
@@ -115,7 +115,6 @@ auto Client::get_docs() -> std::list<Document>
                     size_t g_count = response["count"];
                     std::cout << "TOTAL DOCS COUNT: " << g_count << std::endl;
                     if (g_count != 0) {
-                        //                       size_t counter = 0;
                         std::cout << "DOCS:" << std::endl;
                         json docs = response["items"];
                         for (json::iterator it = docs.begin(); it != docs.end(); ++it) {
@@ -132,7 +131,7 @@ auto Client::get_docs() -> std::list<Document>
             }
             catch (const std::exception &ex)
             {
-                std::cout << ex.what() << std::endl;
+                std::cerr << ex.what() << std::endl;
             }
         }
         else
