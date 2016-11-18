@@ -48,6 +48,3 @@ private:
 
 #endif //VKONT_CLIENT_H
 
-//5688332
-
-//https://oauth.vk.com/blank.html#access_token=90be8cecdd94e266ece912fae740d606d24fa57f5fc93609b5a189123cb913346182579a6ed6e593270f0&expires_in=86400&user_id=123373332
