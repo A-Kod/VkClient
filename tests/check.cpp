@@ -4,6 +4,7 @@
 
 SCENARIO("client must check connection using a token")
 {
+    /*
     GIVEN("an invalid token")
     {
 
@@ -15,7 +16,7 @@ SCENARIO("client must check connection using a token")
             }
         }
     }
-/*
+*/
     GIVEN("a valid token")
     {
 
@@ -29,12 +30,14 @@ SCENARIO("client must check connection using a token")
             }
         }
     }
-    */
+    
 
 }
 
 SCENARIO("client must get friends correctly")
+    
 {
+    /*
     GIVEN("an authorized client and a json object with his friends")
     {
         WHEN("get docs")
@@ -47,7 +50,8 @@ SCENARIO("client must get friends correctly")
             }
         }
     }
-    /*
+    */
+    
     GIVEN("an authorized client and a json object with his friends")
     {
         Document document;
@@ -67,5 +71,5 @@ SCENARIO("client must get friends correctly")
             }
         }
     }
-    */
+    
 }
