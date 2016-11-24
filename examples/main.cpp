@@ -4,8 +4,7 @@
 #include <future>
 #include "vk/client.hpp"
 #include "vk/threads.hpp"
-
-std::recursive_mutex m;
+//#include "sources/client.cpp"
 
 std::vector<Document> lst;
 
@@ -34,5 +33,4 @@ int main()
         std::cout<<std::endl<<"Не удалось подключиться"<<std::endl;
     return 0;
 }
-
 
