@@ -7,25 +7,20 @@ Vk_Thread::Vk_Thread(std::vector<Document> l)
 
 auto Vk_Thread::print_thread(int id) -> void
 {
-
    do
    {
        auto begin = std::chrono::high_resolution_clock::now();
        time_t  time_vk;
        time_vk=time(0);
        std::lock_guard<std::recursive_mutex> lk(m);
-       //std::lock_guard<std::mutex> lk(m);
        if (counter < (lst.size()))
         {
-       //     std::lock_guard<std::mutex> lk(m);
             std::cout<<std::endl<<"----------------------------------------------"<<std::endl<<"Document #"<<(counter+1)<<" "<<std::endl;
             if (flag)
             {
                 std::cout<<"Start time:"<<puts(ctime(&time_vk))<<std::endl;
-              //  std::cout<<start.count()<<std::endl;
                 std::cout << "number_of_thread: " << id << std::endl;
                 lst[counter].print_doc();
-               // time_vk=time(0);
                 std::cout<<"End time:"<<puts(ctime(&time_vk))<<std::endl;
                 auto end = std::chrono::high_resolution_clock::now();
                 std::cout<<"Duration time: "<<std::chrono::duration_cast<std::chrono::nanoseconds>(end-begin).count()<<" nanoseconds"<< std::endl;
@@ -35,7 +30,6 @@ auto Vk_Thread::print_thread(int id) -> void
             {
                 lst[counter].print_doc();
             }
-
         }
         counter ++;
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
