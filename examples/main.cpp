@@ -4,8 +4,8 @@
 #include <future>
 #include <vk/client.hpp>
 #include <vk/threads.hpp>
-#include "client.cpp"
-#include "threads.cpp"
+#include "../client.cpp"
+#include "../threads.cpp"
 
 std::vector<Document> lst;
 
