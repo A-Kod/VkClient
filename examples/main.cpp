@@ -2,8 +2,8 @@
 #include <thread>
 #include <vector>
 #include <future>
-#include "../client.hpp"
-#include "../threads.hpp"
+#include <vk/client.hpp>
+#include <vk/threads.hpp>
 //#include "sources/client.cpp"
 
 std::vector<Document> lst;
