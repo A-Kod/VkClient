@@ -35,9 +35,10 @@ public:
     auto check_connection() -> bool;
 
     // список всех друзей для выбранного id
-    auto get_docs() ->  std::list<Document>;
+    auto get_docs() ->  std::vector<Document>;
 
     auto print_docs() -> void;
+
 
 private:
     std:: string a_token;
@@ -47,4 +48,6 @@ private:
 
 
 #endif //VKONT_CLIENT_H
+
+
 
