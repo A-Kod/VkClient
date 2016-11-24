@@ -16,16 +16,16 @@ public:
 
     auto launch_threads(int n)->bool;
 
-    auto cin()->bool;
+    auto user_input()->bool;
 
     ~Vk_Thread();
 private:
     int counter = 0;
     std::recursive_mutex m;
+    //std::mutex m;
     bool flag;
     std::vector<Document> lst;
     std::vector<std::thread> vk_vec;
 
 };
 #endif //VKCLIENT_THREADS_H
-
