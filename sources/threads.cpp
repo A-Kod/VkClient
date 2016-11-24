@@ -7,20 +7,25 @@ Vk_Thread::Vk_Thread(std::vector<Document> l)
 
 auto Vk_Thread::print_thread(int id) -> void
 {
+
    do
    {
        auto begin = std::chrono::high_resolution_clock::now();
        time_t  time_vk;
        time_vk=time(0);
        std::lock_guard<std::recursive_mutex> lk(m);
+       //std::lock_guard<std::mutex> lk(m);
        if (counter < (lst.size()))
         {
+       //     std::lock_guard<std::mutex> lk(m);
             std::cout<<std::endl<<"----------------------------------------------"<<std::endl<<"Document #"<<(counter+1)<<" "<<std::endl;
             if (flag)
             {
                 std::cout<<"Start time:"<<puts(ctime(&time_vk))<<std::endl;
+              //  std::cout<<start.count()<<std::endl;
                 std::cout << "number_of_thread: " << id << std::endl;
                 lst[counter].print_doc();
+               // time_vk=time(0);
                 std::cout<<"End time:"<<puts(ctime(&time_vk))<<std::endl;
                 auto end = std::chrono::high_resolution_clock::now();
                 std::cout<<"Duration time: "<<std::chrono::duration_cast<std::chrono::nanoseconds>(end-begin).count()<<" nanoseconds"<< std::endl;
@@ -28,7 +33,6 @@ auto Vk_Thread::print_thread(int id) -> void
             }
             else
             {
-                //std::cout << lst[counter].id << std::endl;
                 lst[counter].print_doc();
             }
 
@@ -60,20 +64,20 @@ auto Vk_Thread::launch_threads(int n)->bool
     return true;
 }
 
-auto Vk_Thread::cin()->bool
+auto Vk_Thread::user_input()->bool
 {
-    std::string s;
+    std::string input;
     int n;
-    std::cin >> s;
+    std::cin >> input;
 
-    if (s == "get_docsv")
+    if (input == "get_docsv")
     {
         flag = true;
         std::cout << "Enter the number of threads:" << std::endl;
         std::cin >> n;
         return launch_threads(n);
     }
-    if (s == "get_docs")
+    if (input == "get_docs")
     {
         flag = false;
         std::cout << "Number of threads:" << std::endl;
