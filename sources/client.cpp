@@ -67,18 +67,30 @@ auto Client::check_connection() -> bool
             {
                 std::cerr << ex.what() << std::endl;
             }
+
+//               else
+//               {
+//                   json error = server_answer["error"];
+//                   std::cout << "ERROR: " << error << std::endl;
+//                   curl_easy_cleanup(curl);
+//                   return false;
+//               }
+
         }
+//        std::cout << "ERROR" << std::endl;
         else
         {
             curl_easy_cleanup(curl);
             return false;
         }
     }
+//    std::cout << "ERROR" << std::endl;
+//    return false;
 }
 
 
 // список всех друзей для выбранного id
-auto Client::get_docs() -> std::list<Document>
+auto Client::get_docs() -> std::vector<Document>
 {
     CURL *curl = curl_easy_init();
 
@@ -86,13 +98,13 @@ auto Client::get_docs() -> std::list<Document>
     if (curl)
     {
         // прописываем настройки для авторизации через token
-   //     std::string fields = "count=45&offset=0&type=1&owner_id=123373332&access_token=" + a_token + "&v=5.60";
-        std::string fields = "count=1&offset=0&type=1&owner_id=123373332&access_token=" + a_token + "&v=5.60";
+       std::string fields = "count=45&offset=0&type=1&owner_id=123373332&access_token=" + a_token + "&v=5.60";
+     //   std::string fields = "count=1&offset=0&type=1&owner_id=123373332&access_token=" + a_token + "&v=5.60";
 
         // строка для получения ответа от сервера
         std::string buffer = "";
         Document document;
-        std::list<Document> lst;
+        std::vector<Document> lst;
 
         //     https://vk.com/dev/audio.get?params[owner_id]=123373332&params[need_user]=1&params[count]=3&params[v]=5.60
 
@@ -115,7 +127,8 @@ auto Client::get_docs() -> std::list<Document>
                     size_t g_count = response["count"];
                     std::cout << "TOTAL DOCS COUNT: " << g_count << std::endl;
                     if (g_count != 0) {
-                        std::cout << "DOCS:" << std::endl;
+                        //                       size_t counter = 0;
+                        std::cout << "Choose mode: get_docsv or get_docs"<<std::endl;
                         json docs = response["items"];
                         for (json::iterator it = docs.begin(); it != docs.end(); ++it) {
                             document.id = it.value()["id"];
@@ -144,9 +157,9 @@ auto Client::get_docs() -> std::list<Document>
 
 auto Client::print_docs() -> void
 {
-    std::list<Document> lst = get_docs();
+    std::vector<Document> lst = get_docs();
     size_t counter = 0;
-    for (std::list<Document>::iterator it = lst.begin(); it != lst.end(); ++it)
+    for (std::vector<Document>::iterator it = lst.begin(); it != lst.end(); ++it)
     {
         std::cout << ++counter << "." << std::endl;
         it->print_doc();
