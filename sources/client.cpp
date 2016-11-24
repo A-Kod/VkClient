@@ -67,25 +67,13 @@ auto Client::check_connection() -> bool
             {
                 std::cerr << ex.what() << std::endl;
             }
-
-//               else
-//               {
-//                   json error = server_answer["error"];
-//                   std::cout << "ERROR: " << error << std::endl;
-//                   curl_easy_cleanup(curl);
-//                   return false;
-//               }
-
         }
-//        std::cout << "ERROR" << std::endl;
         else
         {
             curl_easy_cleanup(curl);
             return false;
         }
     }
-//    std::cout << "ERROR" << std::endl;
-//    return false;
 }
 
 
