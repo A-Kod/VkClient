@@ -1,9 +1,7 @@
 #include "vk/threads.hpp"
 
-
-Vk_Thread::Vk_Thread(std::vector<Document> l)
+Vk_Thread::Vk_Thread(const std::vector<Document> &l): lst(l)
 {
-    lst = l;
 }
 
 auto Vk_Thread::print_thread(uint32_t id) -> void
