@@ -48,7 +48,7 @@ SCENARIO("client must get documents correctly")
             }
         }
     }
-    
+ /*   
     
     GIVEN("compare 1st doc")
     {
@@ -68,5 +68,6 @@ SCENARIO("client must get documents correctly")
                 REQUIRE(compare);
             }
         }
-    }    
+    } 
+    */
 }
