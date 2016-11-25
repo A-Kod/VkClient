@@ -47,8 +47,7 @@ SCENARIO("client must get documents correctly")
                 REQUIRE(client.get_docs().size()==0);
             }
         }
-    }
- /*   
+    }   
     
     GIVEN("compare 1st doc")
     {
@@ -60,7 +59,7 @@ SCENARIO("client must get documents correctly")
         WHEN("get docs")
         {
             Client client("a1cf532920c3843b7f17b445e139d7419a110173937db90d1536142290715dccd49a794f1adc75dc0fcfd");
-            std::list<Document> lst = client.get_docs();
+            std::vector<Document> lst = client.get_docs();
             bool compare = ((document.url.compare (lst.front().url)!=0));
 
             THEN("compare==1")
@@ -69,5 +68,5 @@ SCENARIO("client must get documents correctly")
             }
         }
     } 
-    */
+    
 }
