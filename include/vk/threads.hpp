@@ -22,7 +22,6 @@ public:
 private:
     uint32_t curr_ptr = 0;
     std::recursive_mutex m;
-    //std::mutex m;
     bool flag;
     std::vector<Document> lst;
     std::vector<std::thread> vk_vec;
