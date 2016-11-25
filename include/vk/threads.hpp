@@ -10,7 +10,7 @@
 class Vk_Thread
 {
 public:
-    Vk_Thread(std::vector<Document>);
+    k_Thread(const std::vector<Document>&);
 
     auto print_thread(uint32_t id) -> void;
 
