@@ -12,7 +12,7 @@ option(BUILD_TESTS "Build tests for vkclient" ON)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/)
 
-add_library(${PROJECT_NAME} STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/client.cpp)
+add_library(${PROJECT_NAME} STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/client.cpp include/vk/json.hpp sources/threads.cpp include/vk/threads.hpp)
 
 find_package(OpenSSL REQUIRED)
 find_package(CURL REQUIRED)
